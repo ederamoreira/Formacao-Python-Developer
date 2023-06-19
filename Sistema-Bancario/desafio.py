@@ -17,30 +17,30 @@ while True:
     opcao = input(menu)
 
     if opcao == '1':
-        deposito = float(input('Quanto você quer depositar? R$'))
+        deposito = float(input('Digite o valor para depósito:'))
 
         if deposito > 0:
             saldo = saldo + deposito
             print(f'Saldo: R${saldo}')
             extrato += (f'\nDepósito: R$ {deposito:.2f}')
         else:
-            print('Operação falou! Digite um valor válido!')
+            print('Digite um valor válido!')
 
     elif opcao == '2':
 
         while True:
             if numero_saques >= LIMITE_SAQUES:
-                print('Limite máximo de saques realizados por dia')
+                print('Limite máximo de saques exedido!')
                 break
 
-            saque = float(input('Quanto você quer sacar? R$'))
+            saque = float(input('Digite o valor que deseja sacar:'))
 
             if saque > saldo:
-                print('Não foi possível sacar esse valor, pois não tem saldo dísponivel!')
+                print('Saldo insuficiente!')
                 break
 
             if saque >= 500:
-                print('Você só pode sacar no máximo R$500,00 reais por saque!')
+                print('Limite máximo por saque de R$ 500,00 excecido.')
                 break
 
             if saque > 0:
@@ -64,4 +64,4 @@ while True:
         print('Saindo...')
         break
     else:
-        print('Operação inválida, por favor digite novamente.')
+        print('Operação inválida!')
